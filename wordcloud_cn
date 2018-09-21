@@ -1,0 +1,12 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+import jieba
+filename = r"C:\Users\MooMoo\Desktop\text_cn.txt"
+with open(filename) as f:
+    mytext = f.read()
+mytext = "  ".join(jieba.cut(mytext))
+print mytext
+wordcloud = WordCloud(font_path="c:\windows\Fonts\simhei.ttf").generate(mytext)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
